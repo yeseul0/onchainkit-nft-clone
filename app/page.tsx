@@ -94,10 +94,9 @@ export default function App() {
         </div>
       </main>
 
-      {/* 푸터 - 로고들 */}
+      {/* 로고들 */}
       <footer style={styles.footer}>
         <div style={styles.logoContainer}>
-          {/* 각 로고를 직접 하드코딩하여 테스트 */}
           <div className="logo-wrapper" style={styles.logoWrapper}>
             <img src="/base.svg" alt="Base" style={styles.logoImage} />
           </div>
