@@ -1,18 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { NFTCard } from '@coinbase/onchainkit/nft';
-import {
-  NFTLastSoldPrice,
-  NFTMedia,
-  NFTNetwork,
-  NFTOwner,
-  NFTTitle,
-} from '@coinbase/onchainkit/nft/view';
+
+
 
 export default function NFTCardComponent() {
   // 컨트랙트 주소는 고정
-  const contractAddress = "0xF8B75c6080B9A74Fb7C5E4C8D24f5deA2f8Fe082";
+  const contractAddress = "";
   
   // 토큰 ID 범위 설정 (1부터 50까지)
   const maxTokenId = 50;
@@ -55,16 +49,7 @@ export default function NFTCardComponent() {
         <div style={styles.cardWrapper}>
           {/* NFT 카드 컴포넌트를 고정 크기 컨테이너로 감싸기 */}
           <div style={styles.cardContainer}>
-            <NFTCard
-              contractAddress={contractAddress}
-              tokenId={currentTokenId.toString()}
-            >
-              <NFTMedia square={true} /> {/* square를 true로 변경 */}
-              <NFTTitle />
-              <NFTOwner />
-              <NFTLastSoldPrice />
-              <NFTNetwork />
-            </NFTCard>
+            {/* 여기에 NFT 카드 컴포넌트를 추가하세요!!!! */}
           </div>
           
           {/* 페이지네이션 점들 */}

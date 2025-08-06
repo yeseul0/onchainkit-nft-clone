@@ -13,7 +13,7 @@ import {
   Identity,
   EthBalance,
 } from '@coinbase/onchainkit/identity';
-import NFTCardComponent from './nftCard'; 
+
 
 export default function App() {
   // 링크 버튼 데이터
@@ -89,8 +89,8 @@ export default function App() {
 
         {/* 오른쪽 섹션 - NFT 카드 컴포넌트 자리 */}
         <div style={styles.rightSection}>
-          {/* 불투명 배경 제거 - 직접 NFTCardComponent만 렌더링 */}
-          <NFTCardComponent/>
+          {/* NFTCardComponent 렌더링!!!!! */}
+          
         </div>
       </main>
 
