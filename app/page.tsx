@@ -1,22 +1,7 @@
 'use client';
-import {
-  ConnectWallet,
-  Wallet,
-  WalletDropdown,
-  WalletDropdownLink,
-  WalletDropdownDisconnect,
-} from '@coinbase/onchainkit/wallet';
-import {
-  Address,
-  Avatar,
-  Name,
-  Identity,
-  EthBalance,
-} from '@coinbase/onchainkit/identity';
-
+//import 추가!! 
 
 export default function App() {
-  // 링크 버튼 데이터
   const links = [
     {
       title: 'Base Onchainkit Docs',
@@ -37,40 +22,14 @@ export default function App() {
 
   return (
     <div style={styles.container}>
-      {/* 헤더 부분 */}
       <header style={styles.header}>
         <div style={styles.headerContent}>
           <div style={styles.walletContainer}>
-            <Wallet>
-              <ConnectWallet>
-                <Avatar className="h-6 w-6" />
-                <Name />
-              </ConnectWallet>
-              <WalletDropdown>
-                <Identity className="px-4 pt-3 pb-2" hasCopyAddressOnClick>
-                  <Avatar />
-                  <Name />
-                  <Address />
-                  <EthBalance />
-                </Identity>
-                <WalletDropdownLink
-                  icon="wallet"
-                  href="https://keys.coinbase.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Wallet
-                </WalletDropdownLink>
-                <WalletDropdownDisconnect />
-              </WalletDropdown>
-            </Wallet>
+            {/* 지갑 컴포넌트 렌더링 */}
           </div>
         </div>
       </header>
-
-      {/* 메인 콘텐츠 */}
       <main style={styles.main}>
-        {/* 왼쪽 섹션 - 링크 버튼들 */}
         <div style={styles.leftSection}>
           {links.map((link, index) => (
             <a 
@@ -78,7 +37,7 @@ export default function App() {
               href={link.url} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="link-button" // 호버 효과를 위한 클래스 추가
+              className="link-button" 
               style={styles.linkButton}
             >
               <h3 style={styles.linkTitle}>{link.title}</h3>
@@ -86,15 +45,11 @@ export default function App() {
             </a>
           ))}
         </div>
-
-        {/* 오른쪽 섹션 - NFT 카드 컴포넌트 자리 */}
         <div style={styles.rightSection}>
           {/* NFTCardComponent 렌더링!!!!! */}
-          
+
         </div>
       </main>
-
-      {/* 로고들 */}
       <footer style={styles.footer}>
         <div style={styles.logoContainer}>
           <div className="logo-wrapper" style={styles.logoWrapper}>
@@ -112,7 +67,6 @@ export default function App() {
         </div>
       </footer>
 
-      {/* 호버 효과를 위한 CSS */}
       <style jsx global>{`
         .link-button {
           transition: all 0.3s ease;
@@ -157,7 +111,7 @@ const styles = {
     justifyContent: 'flex-end',
   },
   walletContainer: {
-    // 지갑 컨테이너 스타일
+    
   },
   main: {
     flexGrow: 1,
@@ -167,7 +121,7 @@ const styles = {
     gap: '32px',
   },
   leftSection: {
-    width: '40%', // 가로 길이 줄임
+    width: '40%', 
     display: 'flex',
     flexDirection: 'column',
     gap: '24px',
@@ -185,15 +139,15 @@ const styles = {
     borderRadius: '12px',
     padding: '24px',
     border: '1px solid rgba(255, 255, 255, 0.2)',
-    boxShadow: '0 4px 12px rgba(83, 56, 201, 0.4)', // 보라색 그림자
+    boxShadow: '0 4px 12px rgba(83, 56, 201, 0.4)', 
     display: 'flex',
     flexDirection: 'column',
     gap: '8px',
     cursor: 'pointer',
     textDecoration: 'none',
     color: 'white',
-    maxWidth: '400px', // 최대 가로 길이 제한
-    margin: '0 auto', // 중앙 정렬
+    maxWidth: '400px', 
+    margin: '0 auto',
   },
   linkTitle: {
     fontSize: '20px',
